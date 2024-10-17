@@ -2,6 +2,7 @@ package main;
 
 import java.io.*;
 import java.util.List;
+import editor.core.*;
 
 import editor.core.Editor;
 
@@ -54,11 +55,11 @@ public class Main {
 					Point point = parseCoordinates(tokens[1]);
 					
 					if (action.equals("pulsar")) {
-						editor.mousePressed(point.x, point.y);
+						editor.mousePressed(point.x(), point.y());
 					} else if (action.equals("mover")) {
-						editor.mouseMoved(point.x, point.y);
+						editor.mouseMoved(point.x(), point.y());
 					} else {
-						editor.mouseReleased(point.x, point.y);
+						editor.mouseReleased(point.x(), point.y());
 					}
 				
 				} catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
@@ -73,7 +74,13 @@ public class Main {
 				editor.draw();
 			} else if (action.equals("ayuda")) {
 				showHelp(output);
-			} else {
+			} else if(action.equals("deshacer")){
+				editor.getEditorStack().undo();
+			} else if(action.equals("rehacer")){
+				editor.getEditorStack().redo();
+			}
+			
+			else {
 				output.println("Acción desconocida");
 				showHelp(output);
 			}
@@ -84,7 +91,7 @@ public class Main {
 		output.println("");
 		output.println("Herramientas: " + showTools());
 		output.println("Eventos del ratón: pulsar <x>, <y> - mover <x>, <y> - soltar <x>, <y>");
-		output.println("Otras acciones: dibujar - ayuda - salir");
+		output.println("Otras acciones: dibujar - deshacer - rehacer - ayuda - salir");
 		output.println("---------------------------------------------------------------------");
 	}
 
@@ -104,5 +111,8 @@ public class Main {
 		return new Point(x, y);
 	}
 
-	private record Point(int x, int y) {}
+	/**
+	private record Point(int x, int y) {
+		return null;
+	}*/
 }

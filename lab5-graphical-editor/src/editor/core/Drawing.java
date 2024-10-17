@@ -28,4 +28,8 @@ public class Drawing  {
 		}
 		return null;
 	}
+
+	public void removeFigure(Figure	figure){
+		figures.remove(figure);
+	}
 }

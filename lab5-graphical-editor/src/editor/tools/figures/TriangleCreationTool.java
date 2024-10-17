@@ -1,6 +1,9 @@
 package editor.tools.figures;
 
-import editor.core.*;
+import editor.core.Editor;
+import editor.core.Figure;
+import editor.core.Point;
+import editor.core.Tool;
 import editor.figures.Triangle;
 
 public class TriangleCreationTool implements Tool {

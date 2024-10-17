@@ -1,6 +1,10 @@
 package editor.tools;
 
-import editor.core.*;
+import commands.concretecommands.CreateCommands;
+import editor.core.Area;
+import editor.core.Editor;
+import editor.core.Figure;
+import editor.core.Tool;
 
 public abstract class AbstractCreationTool implements Tool {
 
@@ -42,6 +46,7 @@ public abstract class AbstractCreationTool implements Tool {
         bounds.resizeTo(x, y);
         Figure newFigure = createFigure(bounds);
         editor.drawing().addFigure(newFigure);
+        editor.getEditorStack().addChange(new CreateCommands(editor.drawing(), newFigure));
         editor.toolDone();
     }
 

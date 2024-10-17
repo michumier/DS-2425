@@ -2,7 +2,9 @@ package editor.figures;
 
 import java.io.PrintWriter;
 
-import editor.core.*;
+import editor.core.Area;
+import editor.core.Figure;
+import editor.core.Point;
 
 public class Circle implements Figure {
 

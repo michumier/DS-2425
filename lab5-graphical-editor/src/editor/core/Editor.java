@@ -3,6 +3,8 @@ package editor.core;
 import java.io.PrintWriter;
 import java.util.*;
 
+import commands.Command;
+import commands.EditorStack;
 import editor.tools.SelectionTool;
 import editor.tools.figures.*;
 
@@ -17,15 +19,20 @@ public class Editor {
 	private Map<String, Tool> toolbar = new LinkedHashMap<>();
 	// The names of the tools to be shown in the status bar
 	private Map<Tool, String> toolNames = new LinkedHashMap<>();
+
+	private EditorStack editorStack;
 	
 	public Editor() {
+		
 		this(new Drawing());
+		editorStack = new EditorStack();
 	}
 	
 	public Editor(Drawing drawing) {
 		output = new PrintWriter(System.out, true);
 		setDrawing(drawing);
 		currentTool = defaultTool = createDefaultTool();
+		editorStack = new EditorStack();
 		createTools();
 	}
 
@@ -43,7 +50,7 @@ public class Editor {
 	// also call 'addTool' to add the created tool with a name to the toolbar.
 	//
 	protected Tool createDefaultTool() {
-		Tool tool = new SelectionTool(drawing);
+		Tool tool = new SelectionTool(this);
 		addTool("seleccion", tool);
 		return tool;
 	}
@@ -113,5 +120,14 @@ public class Editor {
 
 	public void mouseReleased(int x, int y) {
 		currentTool.releasedOn(x, y);
+	}
+
+	// UNDO Y REDO
+	public void addUndo(Command command){
+		editorStack.addChange(command);
+	}
+
+	public EditorStack getEditorStack(){
+		return editorStack;
 	}
 }

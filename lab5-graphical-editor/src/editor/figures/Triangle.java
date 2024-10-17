@@ -2,7 +2,8 @@ package editor.figures;
 
 import java.io.PrintWriter;
 
-import editor.core.*;
+import editor.core.Figure;
+import editor.core.Point;
 
 public class Triangle implements Figure {
 

@@ -1,6 +1,8 @@
 package editor.tools.figures;
 
-import editor.core.*;
+import editor.core.Area;
+import editor.core.Editor;
+import editor.core.Figure;
 import editor.figures.Circle;
 import editor.tools.AbstractCreationTool;
 

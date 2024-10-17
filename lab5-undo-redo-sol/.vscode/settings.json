@@ -1,0 +1,16 @@
+{
+    "java.dependency.packagePresentation": "flat",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".project": true,
+        ".classpath": true,
+        ".vscode": true,
+        "bin": true
+    },
+    "hide-files.files": []
+}

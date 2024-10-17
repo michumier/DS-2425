@@ -1,15 +1,21 @@
 package editor.tools;
 
-import editor.core.*;
+import commands.concretecommands.MoveCommands;
+import editor.core.Drawing;
+import editor.core.Editor;
+import editor.core.Figure;
+import editor.core.Point;
+import editor.core.Tool;
 
 public class SelectionTool implements Tool {
 
     private Drawing drawing;
     private Figure figure;
     private Point lastPosition;
+    private Editor editor;
 
-    public SelectionTool(Drawing drawing) {
-        this.drawing = drawing;
+    public SelectionTool(Editor editor) {
+        this.drawing = editor.drawing();
     }
 
     @Override
@@ -32,7 +38,8 @@ public class SelectionTool implements Tool {
 
     @Override
     public void releasedOn(int x, int y) {
-        move(x, y);        
+        move(x, y); 
+        editor.getEditorStack().addChange(new MoveCommands(figure, x, y));       
         reset();
     }
 
