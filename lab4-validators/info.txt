@@ -1,0 +1,10 @@
+PATRÓN STRATEGY:
+
+- Validador --> interfaz STRATEGY
+- Validadores --> inmplementaciones
+
+
+PATRÓN COMPOSITE:
+
+- CheckAny y CheckAll --> Composite 
+    - Tienen una lista de elementos simples e implementan la misma interfaz.
