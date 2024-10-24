@@ -1,5 +1,6 @@
 package editor.cores;
 
+
 import java.io.*;
 
 import editor.herramientas.HerramientaSeleccion;
