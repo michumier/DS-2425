@@ -16,7 +16,7 @@ public class Bluetooth implements Output {
         output = new StringBuilder();
         output.append("\n--- START Bluetooth [" + device + "]\n");
     }
-
+    
     @Override
     public void write(char c) {
         output.append(c);
