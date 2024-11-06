@@ -42,15 +42,16 @@ public class Main {
 
 		CharCounterOutput c1 = new CharCounterOutput(new FileOutput("mod3.txt"));
 		system.copyFile("private.txt", c1);
-		c1.printCharCounter();
+		System.out.println(" - Character counter: " + c1.printCharCounter());
+		
 
 		CharCounterOutput c2 = new CharCounterOutput(new Internet("156.35.233.143"));
 		system.copyFile("private.txt", c2);
-		c2.printCharCounter();
+		System.out.println(" - Character counter: " + c2.printCharCounter());
 
 		CharCounterOutput c3 = new CharCounterOutput(new Bluetooth("César's iPhone"));
 		system.copyFile("private.txt", c3);
-		c3.printCharCounter();
+		System.out.println(" - Character counter: " + c3.printCharCounter());
 		
 	}
 }

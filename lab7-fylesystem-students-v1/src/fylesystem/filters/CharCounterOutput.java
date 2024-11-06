@@ -33,8 +33,8 @@ public class CharCounterOutput implements Output{
         output.close();
     }
 
-    public void printCharCounter(){
-        System.out.println(" - Character counter: " + counter);
+    public int printCharCounter(){
+        return counter;
     }
 
 }
