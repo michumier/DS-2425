@@ -9,4 +9,11 @@ Repositorio de los laboratorios de DS 2024-2025
 - Lab 5: Undo y Redo
     - Patrón Command.
 - Lab 6: Mapas de monumentos
-    - Patrón 
+    - Patrón Adapter
+- Lab 7: Filesystem
+    - Patrón Decorator
+- Lab 8: Poll
+    - Patrón Observer
+    - Patrón Decorator en los repeater y activator!!! --> añades funcionalidad!!!
+- Lab 9: Ideal Print
+    - Patrón Visitor
